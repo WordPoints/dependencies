@@ -137,7 +137,7 @@ Things might break, causing concern, frustration, injury or even (the white scre
 Show the user a message telling them that the installed version of the dependency is no longer supported and they need to update.
 
 #### WWJD Solution
-Automatically upgrade the dependency, or don't upgrade the dependent, depending on the user's intention.
+Automatically upgrade the dependency, or don't upgrade the dependent, depending on the user's intention. Or, automatically resolve any conflicts so that they both just work together.
 
 #### Proposed Solution
 When the user updates the dependent, give them the option to update the dependency as well. This would require that we already know about the incompatibility via an API endpoint provided by the library distributor, or another means. Dry-run checks as noted in problem 3 could still be useful.
