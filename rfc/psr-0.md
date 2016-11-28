@@ -164,6 +164,11 @@ Notes:
 
 ## Resources
 
+### WordPress Dependency Managers
+
+- [WP Plugin Dependencies by XWP](https://github.com/xwp/wp-plugin-dependencies/)
+- [TGM Plugin Activation](http://tgmpluginactivation.com/)
+
 ### Related WordPress Tickets
 - [#10190](https://core.trac.wordpress.org/ticket/10190) Plugin Dependency Class API
 - [#11308](https://core.trac.wordpress.org/ticket/11308) Handling plugin dependencies
@@ -175,3 +180,4 @@ Notes:
 - [WordPress Plugin Dependency Programming](http://www.cleancode.co.nz/blog/481/wordpress-plugin-dependency-programming)
 - [WordPress needs plugin dependencies](http://lucdebrouwer.nl/wordpress-needs-plugin-dependencies/)
 - [A Case For Dependency Management with WordPress](https://tommcfarlin.com/dependency-management-with-wordpress/)
+- [WordPress Core Proposal: Dependency Management](https://ttmm.io/tech/wordpress-dependency-management/)
