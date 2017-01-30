@@ -23,7 +23,7 @@ Additional types MAY be added.
 
 ## Relationship Types
 
-There are different ways that a dependent library can relate to a "dependency", some of which don't actually imply dependency at all:
+There are different ways that a dependent library can relate to a "dependency", some of which don't actually imply *dependency* at all:
 
 - `requires` - Things that are required for the module to work. Without them, you will experience problems, maybe even the white screen of death.
 - `recommended` - Things that are recommended to use with the module. The module will work without them, but some features may be crippled, though the site won't break entirely.
@@ -36,7 +36,26 @@ There are different ways that a dependent library can relate to a "dependency", 
 
 Additional types MAY be added.
 
-Also, each of these MAY also apply to dependency versions. For example, a module might require version 1.1 of a library, but recommend at least version 1.3.
+Also, each of these MAY also apply to dependency versions. For example, a module might *require* version 1.1 of a library, but *recommend* at least version 1.3.
+
+## Versions
+
+Versions should be specified in a format compatible with PHP's `version_compare()` function.
+
+Examples:
+
+- `2.3`
+- `4.5.2`
+- `1.2.0-alpha-3`
+
+Version specifications MAY be accompanied by any of the following operators: `<`, `<=`, `>`, `>=`, `==`, `!=`. When versions are not accompanied by an operator, `>=` is assumed.
+
+Examples:
+
+- `"2.3"` — Anything greater than or equal to 2.3.0.
+- `[">", "2.3.1"]` — Anything greater than 2.3.1.
+- `[ [">", "2.3.1"], ["!=", "2.3.5"] ]` — Anything 2.3.1, but not 2.3.5.
+- `[ [">=", "4.0"], ["<", "5.0"] ]` — Anything greater than or equal to 4.0.0, but less than 5.0.0.
 
 ## Syntax
 
@@ -45,8 +64,8 @@ Also, each of these MAY also apply to dependency versions. For example, a module
     "required": {
         "wordpress": {
              "dot-org": {
-                  "recommended": "3.9+",
-                  "required": "3.7+"
+                  "recommended": "3.9",
+                  "required": "3.7"
              }
         },
         "plugins": { ... }
