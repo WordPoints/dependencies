@@ -32,7 +32,7 @@ There are different ways that a dependent library can relate to a "dependency", 
 - `not-recommended` - Things with known incompatibilities. If the extension is used along with them some features may be crippled, but things won't blow up.
 - `integrated` - Things that aren't required, or necessarily needed for all sites, but which the extension will integrate with if present. 
 - `supersedes` - Things that have been replaced by this extension. The extension is superior and should be used instead. If the extension is used along with them it will result in problems or even break the site.
-- `superseded` - Things that have replaced this extension. They are superior, and should be used instead. If the extension is used along with them it will result in problems or even break the site.
+- `superseded-by` - Things that have replaced this extension. They are superior, and should be used instead. If the extension is used along with them it will result in problems or even break the site.
 
 Additional types MAY be added.
 
