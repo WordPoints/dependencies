@@ -11,6 +11,14 @@ This document builds on the prior information presented in [PSR-0](psr-0.md).
 
 ## Overview
 
+There are three attributes of every relationship between the dependent and a dependency:
+
+- The Library Type of the dependency.
+- The Relationship Type.
+- The dependency versions targeted.
+
+Each of these, in addition to the identifier for the dependency, needs to be made clear, or else the information is not useful.
+
 ## Library Types
 
 - `wordpress` - Libraries implementing the plugin API. WordPress core would be one, and any fork would also be of this type.
