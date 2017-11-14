@@ -168,6 +168,10 @@ Notes:
 
 - [WP Plugin Dependencies by XWP](https://github.com/xwp/wp-plugin-dependencies/)
 - [TGM Plugin Activation](http://tgmpluginactivation.com/)
+- [My Plugin Manager](http://mypluginmanager.com/)
+- [Mozart](https://github.com/coenjacobs/mozart)
+- [WordPress Composer Installer](https://github.com/coenjacobs/wordpress-composer-installer)
+- [WP Dependency Installer](https://github.com/afragen/wp-dependency-installer)
 
 ### Related WordPress Tickets
 - [#10190](https://core.trac.wordpress.org/ticket/10190) Plugin Dependency Class API
@@ -181,3 +185,6 @@ Notes:
 - [WordPress needs plugin dependencies](http://lucdebrouwer.nl/wordpress-needs-plugin-dependencies/)
 - [A Case For Dependency Management with WordPress](https://tommcfarlin.com/dependency-management-with-wordpress/)
 - [WordPress Core Proposal: Dependency Management](https://ttmm.io/tech/wordpress-dependency-management/)
+- [Core plugin dependency is necessary for a better WordPress ecosystem](https://poststatus.com/core-plugin-dependency-is-necessary-for-a-better-wordpress-ecosystem/)
+- [Ryan McCue: How I Would Solve Plugin Dependencies](https://journal.rmccue.io/322/plugin-dependencies/)
+- [Gary Pendergast: How I Would Solve Plugin Dependencies](https://pento.net/2015/05/24/plugin-dependencies/)
