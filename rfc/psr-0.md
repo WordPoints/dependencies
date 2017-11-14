@@ -172,12 +172,15 @@ Notes:
 - [Mozart](https://github.com/coenjacobs/mozart)
 - [WordPress Composer Installer](https://github.com/coenjacobs/wordpress-composer-installer)
 - [WP Dependency Installer](https://github.com/afragen/wp-dependency-installer)
+- [oik-lib](https://github.com/bobbingwide/oik-lib)
+- [Composer](http://composer.rarst.net/)
 
 ### Related WordPress Tickets
 - [#10190](https://core.trac.wordpress.org/ticket/10190) Plugin Dependency Class API
 - [#11308](https://core.trac.wordpress.org/ticket/11308) Handling plugin dependencies
 - [#12612](https://core.trac.wordpress.org/ticket/12612) Plugins dependancy
 - [#13296](https://core.trac.wordpress.org/ticket/13296) Plugin queue to match scripts and styles
+- [#22316](https://core.trac.wordpress.org/ticket/22316) Plugin Dependencies (Yet Another Plugin Dependencies Ticket) 
 
 ### Blog Posts
 - [Plugin Dependency for WordPress Themes](http://www.onequarterenglish.co.uk/plugin-dependency-for-wordpress-themes)
@@ -188,3 +191,4 @@ Notes:
 - [Core plugin dependency is necessary for a better WordPress ecosystem](https://poststatus.com/core-plugin-dependency-is-necessary-for-a-better-wordpress-ecosystem/)
 - [Ryan McCue: How I Would Solve Plugin Dependencies](https://journal.rmccue.io/322/plugin-dependencies/)
 - [Gary Pendergast: How I Would Solve Plugin Dependencies](https://pento.net/2015/05/24/plugin-dependencies/)
+- [[oik] plugins: How I would solve plugin dependencies](https://www.oik-plugins.co.uk/2015/08/how-i-would-solve-plugin-dependencies/)
