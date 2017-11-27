@@ -29,3 +29,15 @@ In the end, we must acknowledge that any constraints which we want to place upon
 In response to this realization we can decide either to design a dependency system that bears this burden, leaving the plugin developer free from contraints, or to place this burden on the plugin developer, thus releiving our depenency system. In fact, in the latter case the very design of the plugin system itself, the framework provided for building plugin APIs, could potentially bear most of that burden, rather than every plugin developer having to shouler it. 
 
 The plugin API as it currently exists, can be reduced primarily to the action and filter API. This API was created to facilitate extension of and integration with WordPress itself. As such, it has also been suggested that it is capable of facilitating integration between plugins. However, it is acknowledged that this is only possible if plugind developers place upon themselves the same constraints which WordPress itself shoulders: "technical debt as a service." The knowledge that a differently designed API might make this unnecessary makes this pill all the harder to swallow.
+
+## Dependency Systems
+
+### Bundling
+
+One form of dependency management is to bundle all dependencies with the dependent, as part of its source code. This causes problems when multiple copies of a depdency are installed, but this can be circumvented by namespacing, at least in regard to code breakage. However, when it comes to feature breakage, even namespacing is limited in its power. There is still only one filesystem, database, cache, and ultimately only one site which will be viewed in a single window. Some interactions can be prefixed, others by their very nature cannot. Just namespacing/prefixing the code itself will not insure compatibility, unless the dependencies are very careful in their interations with these things.
+
+Nonetheless, bundling is a common form of dependency management employed within the WordPress ecosystem. 
+
+But the fact that bundling is opaque, not only to users, but often to WordPress itself, also has consequences. Not only is the installation of the depdency tied to the installation of the dependent, so are updates. Because of this combination of factors, security patches are often not applied to bundled dependencies in a timely manner. This has lead to many hacked sites, and warrants the classification of bundling as a dangerous practice.
+
+Bundling can work with some success for libraries, because they can be utilized for independent purposes, lessening the liklihood of conflict. However, it cannot work for extensions, because by nature they are all generally supposed to be augmenting the same feature set on the site, not separate copies of it.
