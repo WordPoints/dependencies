@@ -30,6 +30,10 @@ In response to this realization we can decide either to design a dependency syst
 
 The plugin API as it currently exists, can be reduced primarily to the action and filter API. This API was created to facilitate extension of and integration with WordPress itself. As such, it has also been suggested that it is capable of facilitating integration between plugins. However, it is acknowledged that this is only possible if plugind developers place upon themselves the same constraints which WordPress itself shoulders: "technical debt as a service." The knowledge that a differently designed API might make this unnecessary makes this pill all the harder to swallow.
 
+## Shades of Compatibility
+
+One of the key elements of dependency management is compatibility. It is thus worth stating that compatibility is a layered proposition. Each layer can be defined by what breaks. There is code breakage, which is the most severe. But there is also feature breakage.
+
 ## Dependency Systems
 
 ### Bundling
