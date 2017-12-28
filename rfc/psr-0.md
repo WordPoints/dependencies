@@ -192,3 +192,7 @@ Notes:
 - [Ryan McCue: How I Would Solve Plugin Dependencies](https://journal.rmccue.io/322/plugin-dependencies/)
 - [Gary Pendergast: How I Would Solve Plugin Dependencies](https://pento.net/2015/05/24/plugin-dependencies/)
 - [[oik] plugins: How I would solve plugin dependencies](https://www.oik-plugins.co.uk/2015/08/how-i-would-solve-plugin-dependencies/)
+
+### Other Dependency Systems
+
+- [Drupal](https://www.drupal.org/docs/7/creating-custom-modules/writing-module-info-files-drupal-7x#dependencies)
