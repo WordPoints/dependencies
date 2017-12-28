@@ -68,3 +68,13 @@ For example, consider a case where an extended plugin deprecates and then later 
 This can be eased both by the dependent and dependency, however. The dependent can always check for the existence of the dependency's functions before using them. And the dependent can endeavor to deprecate actions and filters along with the functions that are likely being used with them, although this will not always be feasible.
 
 In short, this is a two-pronged strategy, that requires great attention by the plugin developer both when building their plugin as well as when modifying it in the future. This raises the bar for plugin development, and although it is primarily a concern of plugins that are built specifically with extension in mind, any plugin can be roped into a dependency web without foreseeing the responsibility that will come with it.
+
+### Declared Dependencies
+
+The most commonly suggested basis for a WordPress dependency system is for plugin's to declare their dependencies, probably in the plugin header.
+
+This could also have application beside basic dependency management, like a search feature for finding extensions for a particular plugin.
+
+A downside to this approach is the potential for complexity. 
+
+There is also an argument against adding an explicit system of this sort, becuase developers will feel that the onus is no longer on them to try to ensure their plugin fails gracefully when a dependency isn't installed.
