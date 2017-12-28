@@ -196,3 +196,4 @@ Notes:
 ### Other Dependency Systems
 
 - [Drupal](https://www.drupal.org/docs/7/creating-custom-modules/writing-module-info-files-drupal-7x#dependencies)
+- [Debian](https://www.debian.org/doc/debian-policy/#document-ch-relationships)
