@@ -181,6 +181,8 @@ Notes:
 - [#12612](https://core.trac.wordpress.org/ticket/12612) Plugins dependancy
 - [#13296](https://core.trac.wordpress.org/ticket/13296) Plugin queue to match scripts and styles
 - [#22316](https://core.trac.wordpress.org/ticket/22316) Plugin Dependencies (Yet Another Plugin Dependencies Ticket) 
+- [#30550](https://core.trac.wordpress.org/ticket/30550) Add plugin dependency support
+- [#42383](https://core.trac.wordpress.org/ticket/42383) Creating "Frameworks" in "wp-content"
 
 ### Blog Posts
 - [Plugin Dependency for WordPress Themes](http://www.onequarterenglish.co.uk/plugin-dependency-for-wordpress-themes)
