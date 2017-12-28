@@ -34,6 +34,12 @@ The plugin API as it currently exists, can be reduced primarily to the action an
 
 One of the key elements of dependency management is compatibility. It is thus worth stating that compatibility is a layered proposition. Each layer can be defined by what breaks. There is code breakage, which is the most severe. But there is also feature breakage.
 
+## General Problems
+
+One general problem that any dependency system can have is that it places additional cognative strain on the user to try and comprehend the dependency web. This is especially true when dependencies are declared that are not actually needed. An additional problem that stems from having many dependencies is the possible decrease in site performance, just from the sheer amount of code.
+
+The reality, however, is that all of these problems already exist, without a dependency system. In the case of libraries in particular, a dependency system provides a solution, by allowing the possibility of hiding libraries from the average user, and encouraging the honing of a single canonical package to be as performant and secure as possible. 
+
 ## Dependency Systems
 
 ### Bundling
