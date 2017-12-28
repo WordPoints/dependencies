@@ -51,3 +51,20 @@ Nonetheless, bundling is a common form of dependency management employed within 
 But the fact that bundling is opaque, not only to users, but often to WordPress itself, also has consequences. Not only is the installation of the dependency tied to the installation of the dependent, so are updates. Because of this combination of factors, security patches are often not applied to bundled dependencies in a timely manner. This has lead to many hacked sites, and warrants the classification of bundling as a dangerous practice.
 
 Bundling can work with some success for libraries, because they can be utilized for independent purposes, lessening the liklihood of conflict. However, it cannot work for extensions, because by nature they are all generally supposed to be augmenting the same feature set on the site, not separate copies of it.
+
+
+### None/Hooks
+
+As noted above, the most common reply to the suggestion of a dependency system for WordPress, is to say that one is not really needed, if a plugin properly uses the APIs provided by WordPress already. In particular, the hooks API with its actions and filters can be used to only run code when it is triggered by the plugin that it is integrating with. (Note that this does not solve the other half of the dependency equation, which is libraries, however.)
+
+One of the key benefits of this approach is its granularity. It allows a dependent to degrade gracefully, from fully working with a dependency, to not working with it at all, or most anywhere in between. On the flip side of this is the fact that the degree of compatibility attained is less transparent to the user: just because their site wasn't killed doesn't mean that the features being augmented are actually going to work properly. Of course, this can be remedied in part by the dependent plugin, by displaying warning messages, but even then it may be difficult for it to tell if an integration is actaully being fully realized. Mainly, it can just give a warning when a dependency is not present at all.
+
+This approach also avoids some of the problems and pitfalls that a "proper" dependency system of the form usually suggested would run into. These include complexity, and the difficulty of uniquely identifying dependencies.
+
+The primary problem with this approach, however, has been that it is optional, and the implementation is entirely dependent upon the plugin developer. As a result, many plugins have struggled with this, or taken a different route. Even among plugins that follow this philosophy, there are many pitfalls that are seldom considered.
+
+For example, consider a case where an extended plugin deprecates and then later removes a particular function. Just because dependents have hooked their code to an action provided by the parent plugin does not mean that all functions provided by it will always be available. This is why it is necessary for the extended plugin to practice "technical debt as a service," and take great care in ever removing code.
+
+This can be eased both by the dependent and dependency, however. The dependent can always check for the existence of the dependency's functions before using them. And the dependent can endeavor to deprecate actions and filters along with the functions that are likely being used with them, although this will not always be feasible.
+
+In short, this is a two-pronged strategy, that requires great attention by the plugin developer both when building their plugin as well as when modifying it in the future. This raises the bar for plugin development, and although it is primarily a concern of plugins that are built specifically with extension in mind, any plugin can be roped into a dependency web without foreseeing the responsibility that will come with it.
