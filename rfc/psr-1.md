@@ -34,17 +34,23 @@ Additional types MAY be added.
 There are different ways that a dependent library can relate to a "dependency", some of which don't actually imply *dependency* at all:
 
 - `requires` - Things that are required for the extension to work. Without them, you will experience problems, maybe even the white screen of death.
-- `recommended` - Things that are recommended to use with the extension. The extension will work without them, but some features may be crippled, though the site won't break entirely.
-- `compatible` - Things that the extension is known to be compatible with. If the extension is used along with them no problems should result.
-- `incompatible` - Things with known incompatibilities. If the the extension is used along with them it will result in problems or even break the site.
-- `not-recommended` - Things with known incompatibilities. If the extension is used along with them some features may be crippled, but things won't blow up.
 - `integrated` - Things that aren't required, or necessarily needed for all sites, but which the extension will integrate with if present. 
+- `incompatible` - Things with known incompatibilities. If the the extension is used along with them it will result in problems or even break the site.
 - `supersedes` - Things that have been replaced by this extension. The extension is superior and should be used instead. If the extension is used along with them it will result in problems or even break the site.
 - `superseded-by` - Things that have replaced this extension. They are superior, and should be used instead. If the extension is used along with them it will result in problems or even break the site.
 
 Additional types MAY be added.
 
-Also, each of these MAY also apply to dependency versions. For example, a extension might *require* version 1.1 of a library, but *recommend* at least version 1.3.
+## Version Qualifiers
+
+There are different ways that a dependent library can relate to a dependency version:
+
+- `requires` - Versions that are required for the extension to work. Without them, you will experience problems, maybe even the white screen of death.
+- `recommended` - Versions that are recommended to use with the extension. The extension will work without them, but some features may be crippled, though the site won't break entirely.
+
+For example, a extension might *require* version 1.1 of a library, but *recommend* at least version 1.3.
+
+Additional qualifiers MAY be added.
 
 ## Versions
 
@@ -62,8 +68,8 @@ Examples:
 
 - `"2.3"` — Anything greater than or equal to 2.3.0.
 - `[">", "2.3.1"]` — Anything greater than 2.3.1.
-- `[ [">", "2.3.1"], ["!=", "2.3.5"] ]` — Anything 2.3.1, but not 2.3.5.
-- `[ [">=", "4.0"], ["<", "5.0"] ]` — Anything greater than or equal to 4.0.0, but less than 5.0.0.
+- `[ [">", "2.3.1"], ["!=", "2.3.5"] ]` — Anything greater than 2.3.1, but not 2.3.5.
+- `[ [">=", "4.0"], ["<", "5.0"] ]` — Anything greater than or equal to 4.0, but less than 5.0.
 
 ## Syntax
 
@@ -81,4 +87,4 @@ Examples:
 }
 ```
 
-In other words: `degree of dependency -> type of library -> library -> degree of dependency -> version`
+In other words: `degree of dependency -> type of library -> library -> relationship qualifier -> version`
