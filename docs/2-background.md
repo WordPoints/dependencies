@@ -78,3 +78,41 @@ This could also have application beside basic dependency management, like a sear
 A downside to this approach is the potential for complexity. 
 
 There is also an argument against adding an explicit system of this sort, becuase developers will feel that the onus is no longer on them to try to ensure their plugin fails gracefully when a dependency isn't installed.
+
+## Resources
+
+### WordPress Dependency Managers
+
+- [WP Plugin Dependencies by XWP](https://github.com/xwp/wp-plugin-dependencies/)
+- [TGM Plugin Activation](http://tgmpluginactivation.com/)
+- [My Plugin Manager](http://mypluginmanager.com/)
+- [Mozart](https://github.com/coenjacobs/mozart)
+- [WordPress Composer Installer](https://github.com/coenjacobs/wordpress-composer-installer)
+- [WP Dependency Installer](https://github.com/afragen/wp-dependency-installer)
+- [oik-lib](https://github.com/bobbingwide/oik-lib)
+- [Composer](http://composer.rarst.net/)
+
+### Related WordPress Tickets
+- [#10190](https://core.trac.wordpress.org/ticket/10190) Plugin Dependency Class API
+- [#11308](https://core.trac.wordpress.org/ticket/11308) Handling plugin dependencies
+- [#12612](https://core.trac.wordpress.org/ticket/12612) Plugins dependancy
+- [#13296](https://core.trac.wordpress.org/ticket/13296) Plugin queue to match scripts and styles
+- [#22316](https://core.trac.wordpress.org/ticket/22316) Plugin Dependencies (Yet Another Plugin Dependencies Ticket) 
+- [#30550](https://core.trac.wordpress.org/ticket/30550) Add plugin dependency support
+- [#42383](https://core.trac.wordpress.org/ticket/42383) Creating "Frameworks" in "wp-content"
+
+### Blog Posts
+- [Plugin Dependency for WordPress Themes](http://www.onequarterenglish.co.uk/plugin-dependency-for-wordpress-themes)
+- [WordPress Plugin Dependency Programming](http://www.cleancode.co.nz/blog/481/wordpress-plugin-dependency-programming)
+- [WordPress needs plugin dependencies](http://lucdebrouwer.nl/wordpress-needs-plugin-dependencies/)
+- [A Case For Dependency Management with WordPress](https://tommcfarlin.com/dependency-management-with-wordpress/)
+- [WordPress Core Proposal: Dependency Management](https://ttmm.io/tech/wordpress-dependency-management/)
+- [Core plugin dependency is necessary for a better WordPress ecosystem](https://poststatus.com/core-plugin-dependency-is-necessary-for-a-better-wordpress-ecosystem/)
+- [Ryan McCue: How I Would Solve Plugin Dependencies](https://journal.rmccue.io/322/plugin-dependencies/)
+- [Gary Pendergast: How I Would Solve Plugin Dependencies](https://pento.net/2015/05/24/plugin-dependencies/)
+- [[oik] plugins: How I would solve plugin dependencies](https://www.oik-plugins.co.uk/2015/08/how-i-would-solve-plugin-dependencies/)
+
+### Other Dependency Systems
+
+- [Drupal](https://www.drupal.org/docs/7/creating-custom-modules/writing-module-info-files-drupal-7x#dependencies)
+- [Debian](https://www.debian.org/doc/debian-policy/#document-ch-relationships)
