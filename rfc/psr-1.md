@@ -34,7 +34,7 @@ Additional types MAY be added.
 There are different ways that a dependent library can relate to a "dependency", some of which don't actually imply *dependency* at all:
 
 - `requires` - Things that are required for the extension to work. Without them, you will experience problems, maybe even the white screen of death.
-- `integrated` - Things that aren't required, or necessarily needed for all sites, but which the extension will integrate with if present. 
+- `integrates` - Things that aren't required, or necessarily needed for all sites, but which the extension will integrate with if present. 
 - `incompatible` - Things with known incompatibilities. If the the extension is used along with them it will result in problems or even break the site.
 - `supersedes` - Things that have been replaced by this extension. The extension is superior and should be used instead. If the extension is used along with them it will result in problems or even break the site.
 - `superseded-by` - Things that have replaced this extension. They are superior, and should be used instead. If the extension is used along with them it will result in problems or even break the site.
@@ -46,7 +46,7 @@ Additional types MAY be added.
 There are different ways that a dependent library can relate to a dependency version:
 
 - `requires` - Versions that are required for the extension to work. Without them, you will experience problems, maybe even the white screen of death.
-- `recommended` - Versions that are recommended to use with the extension. The extension will work without them, but some features may be crippled, though the site won't break entirely.
+- `recommends` - Versions that are recommended to use with the extension. The extension will work without them, but some features may be crippled, though the site won't break entirely.
 
 For example, a extension might *require* version 1.1 of a library, but *recommend* at least version 1.3.
 
@@ -75,11 +75,11 @@ Examples:
 
 ``` json
 {
-    "required": {
+    "requires": {
         "wordpress": {
              "dot-org": {
-                  "recommended": "3.9",
-                  "required": "3.7"
+                  "recommends": "3.9",
+                  "requires": "3.7"
              }
         },
         "plugins": { ... }
