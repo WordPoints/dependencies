@@ -21,9 +21,10 @@ Each of these, in addition to the identifier for the dependency, needs to be mad
 
 ## Library Types
 
-- `wordpress` - Libraries implementing the plugin API. WordPress core would be one, and any fork would also be of this type.
+- `wordpress` - Libraries implementing the WordPress API. WordPress core would be one, and any compatible fork would also be of this type.
 - `plugins` - Libraries that are installed as WordPress plugins.
 - `themes` - Libraries that are installed as WordPress themes.
+- `wordpoints` - Libraries implementing the WordPoints API. WordPoints core would be one, and any compatible fork would also be of this type.
 - `wordpoints-extensions` - Libraries that are installed as WordPoints extensions.
 - `wordpoints-components` - Libraries that are installed as WordPoints components.
 
