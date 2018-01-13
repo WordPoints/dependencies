@@ -72,20 +72,39 @@ Examples:
 - `[ [">", "2.3.1"], ["!=", "2.3.5"] ]` — Anything greater than 2.3.1, but not 2.3.5.
 - `[ [">=", "4.0"], ["<", "5.0"] ]` — Anything greater than or equal to 4.0, but less than 5.0.
 
-## Syntax
+## Relationships
 
-``` json
+Relationships are specified within this basic framework. However, the exact rules are specific to each dependency library type.
+
+### `wordpress`
+
+### `wordpoints`
+
+This relationship library type is intended to be used by dependents that are WordPoints extensions. Because of this, the relationship type itself implies a requirement, since extensions by nature require WordPoints. Thus, no relationship type needs to be specified, only the version info.
+
+Examples:
+
+```json
 {
-    "requires": {
-        "wordpress": {
-             "dot-org": {
-                  "recommends": "3.9",
-                  "requires": "3.7"
-             }
-        },
-        "plugins": { ... }
+    "wordpoints": "2.4.0"
+}
+```
+
+```json
+{
+    "wordpoints": {
+        "requires": "2.4.0",
+        "recommends": "2.5.0"
     }
 }
 ```
 
-In other words: `degree of dependency -> type of library -> library -> relationship qualifier -> version`
+Because WordPoints follows semver, only the `>=` version operator may be used. The only exception is the use of the `<` operator for breaking versions. 
+
+### `plugins`
+
+### `themes`
+
+### `wordpoints-extensions`
+
+### `wordpoints-components`
