@@ -123,6 +123,34 @@ Because WordPoints follows semver, only the `>=` version operator may be used. T
 
 ### `plugins`
 
+For each plugin, the following information is needed:
+
+- A slug that can be used to determine whether this plugin is installed (should correspond to the directory name of the plugin), and also to be used in regard to the update/install APIs.
+- `name` — A human-friendly identifier for the plugin, that can be shown to the user when telling them that the plugin is not installed.
+- `version` — The version info.
+
+```json
+{
+    "plugins": {
+        "buddypress": {
+            "version": "1.8.0",
+            "name": "BuddyPress"
+        }
+    }
+}
+```
+
+```json
+{
+    "plugins": {
+        "buddypress": {
+            "version": { "required": "1.8.0", "recommended": "1.9.0" },
+            "name": "BuddyPress"
+        }
+    }
+}
+```
+
 ### `themes`
 
 ### `wordpoints-extensions`
