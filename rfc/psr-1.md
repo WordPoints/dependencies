@@ -158,7 +158,7 @@ For each plugin, the following information is needed:
         "adminbar-link-comments-to-pending": {
             "version": "1.0.0",
             "name": "Adminbar Link Comments to Pending",
-            "url": "https://github.com/jrfnl/WP-adminbar-comments-to-pending/",
+            "url": "https://github.com/jrfnl/WP-adminbar-comments-to-pending/"
         }
     }
 }
@@ -201,10 +201,59 @@ For each theme, the following information is needed:
         "my-example-theme": {
             "version": "1.0.0",
             "name": "My Example Theme",
-            "url": "https://example.com/my-theme/",
+            "url": "https://example.com/my-theme/"
         }
     }
 }
 ```
 
 ### `wordpoints-extensions`
+
+For each WordPoints extension, the following information is needed:
+
+- A slug that may be used to determine whether this extension is installed (should correspond to the directory name of the extension).
+- `name` — A human-friendly identifier for the extension, that can be shown to the user when telling them that the extension is not installed.
+- `version` — The version info.
+- `server` — The server this extension is from.
+- `ID` — The ID of this extension on the remote server.
+- `url` (optional) - A URL for more info about this extension. May be used if the extension is not installed. Not necessary for extension from WordPoints.org.
+
+```json
+{
+    "wordpoints-extensions": {
+        "buddypress": {
+            "version": "1.3.0",
+            "name": "BuddyPress",
+            "ID": "944",
+            "server": "wordpoints.org"
+        }
+    }
+}
+```
+
+```json
+{
+    "wordpoints-extensions": {
+        "buddypress": {
+            "version": { "required": "1.8.0", "recommended": "1.9.0" },
+            "name": "BuddyPress",
+            "ID": "944",
+            "server": "wordpoints.org"
+        }
+    }
+}
+```
+
+```json
+{
+    "wordpoints-extensions": {
+        "example": {
+            "version": "1.0.0",
+            "name": "Example",
+            "ID": "944",
+            "server": "example.com",
+            "url": "https://example.com/wordpoints-extension/"
+        }
+    }
+}
+```
