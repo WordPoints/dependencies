@@ -128,6 +128,7 @@ For each plugin, the following information is needed:
 - A slug that can be used to determine whether this plugin is installed (should correspond to the directory name of the plugin), and also to be used in regard to the update/install APIs.
 - `name` — A human-friendly identifier for the plugin, that can be shown to the user when telling them that the plugin is not installed.
 - `version` — The version info.
+- `url` (optional) - A URL for more info about this plugin. May be used if the plugin is not installed. Not necessary for plugins from WordPress.org.
 
 ```json
 {
@@ -146,6 +147,18 @@ For each plugin, the following information is needed:
         "buddypress": {
             "version": { "required": "1.8.0", "recommended": "1.9.0" },
             "name": "BuddyPress"
+        }
+    }
+}
+```
+
+```json
+{
+    "plugins": {
+        "adminbar-link-comments-to-pending": {
+            "version": "1.0.0",
+            "name": "Adminbar Link Comments to Pending",
+            "url": "https://github.com/jrfnl/WP-adminbar-comments-to-pending/",
         }
     }
 }
