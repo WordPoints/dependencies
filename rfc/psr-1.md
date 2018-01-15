@@ -78,9 +78,30 @@ Relationships are specified within this basic framework. However, the exact rule
 
 ### `wordpress`
 
+This relationship is intended to be specified by dependents that are WordPress extensions. Because of this, the relationship itself implies a requirement, since extensions by nature require WordPress. Thus, no relationship type needs to be specified, only the version info.
+
+Examples:
+
+```json
+{
+    "wordpress": "4.9.0"
+}
+```
+
+```json
+{
+    "wordpresss": {
+        "requires": "4.9.0",
+        "recommends": "5.0.0"
+    }
+}
+```
+
+Since WordPress is usually fully backward compatible, only the `>=` operator should usually be used.
+
 ### `wordpoints`
 
-This relationship library type is intended to be used by dependents that are WordPoints extensions. Because of this, the relationship type itself implies a requirement, since extensions by nature require WordPoints. Thus, no relationship type needs to be specified, only the version info.
+This relationship is intended to be specified by dependents that are WordPoints extensions. Because of this, the relationship itself implies a requirement, since extensions by nature require WordPoints. Thus, no relationship type needs to be specified, only the version info.
 
 Examples:
 
