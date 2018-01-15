@@ -26,7 +26,6 @@ Each of these, in addition to the identifier for the dependency, needs to be mad
 - `themes` - Libraries that are installed as WordPress themes.
 - `wordpoints` - Libraries implementing the WordPoints API. WordPoints core would be one, and any compatible fork would also be of this type.
 - `wordpoints-extensions` - Libraries that are installed as WordPoints extensions.
-- `wordpoints-components` - Libraries that are installed as WordPoints components.
 
 Additional types MAY be added.
 
@@ -127,5 +126,3 @@ Because WordPoints follows semver, only the `>=` version operator may be used. T
 ### `themes`
 
 ### `wordpoints-extensions`
-
-### `wordpoints-components`
