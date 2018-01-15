@@ -166,4 +166,45 @@ For each plugin, the following information is needed:
 
 ### `themes`
 
+For each theme, the following information is needed:
+
+- A slug that can be used to determine whether this theme is installed (should correspond to the directory name of the theme), and also to be used in regard to the update/install APIs.
+- `name` — A human-friendly identifier for the theme, that can be shown to the user when telling them that the theme is not installed.
+- `version` — The version info.
+- `url` (optional) - A URL for more info about this theme. May be used if the theme is not installed. Not necessary for themes from WordPress.org.
+
+```json
+{
+    "themes": {
+        "responsive": {
+            "version": "1.1.0",
+            "name": "Responsive"
+        }
+    }
+}
+```
+
+```json
+{
+    "themes": {
+        "responsive": {
+            "version": { "required": "1.0.0", "recommended": "1.1.0" },
+            "name": "Responsive"
+        }
+    }
+}
+```
+
+```json
+{
+    "themes": {
+        "my-example-theme": {
+            "version": "1.0.0",
+            "name": "My Example Theme",
+            "url": "https://example.com/my-theme/",
+        }
+    }
+}
+```
+
 ### `wordpoints-extensions`
