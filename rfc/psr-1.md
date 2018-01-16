@@ -62,12 +62,19 @@ Examples:
 - `4.5.2`
 - `1.2.0-alpha-3`
 
-Version specifications MAY be accompanied by any of the following operators: `<`, `<=`, `>`, `>=`, `==`, `!=`. When versions are not accompanied by an operator, `>=` is assumed.
+Version specifications MAY be accompanied by any of the following operators: `<`, `<=`, `>`, `>=`, `==`, `!=`, `^`, `~`.
+
+The meanings of `^` and `~` are similar to their meanings within [Composer](https://getcomposer.org/doc/articles/versions.md#next-significant-release-operators):
+
+- `^` Indicates that the dependency follows [semantic versioning](http://semver.org/), and that the dependent is expected to be compatible with all versions of the library up to the next breaking version. Compatibility with the next breaking version is undefined.
+- `~` Indicates that the dependent is expected to be compatible with all point releases, but compatibility with the next major or minor release is undefined.
 
 Examples:
 
 - `"2.3"` — Anything greater than or equal to 2.3.0.
 - `[">", "2.3.1"]` — Anything greater than 2.3.1.
+- `["^", "2.3.1"]` — Anything greater than or equal to 2.3.1, compatibility with 3.0.0+ is undefined.
+- `["~", "2.3.1"]` — Anything greater than or equal to 2.3.1, compatibility with 2.4.0+ is undefined.
 - `[ [">", "2.3.1"], ["!=", "2.3.5"] ]` — Anything greater than 2.3.1, but not 2.3.5.
 - `[ [">=", "4.0"], ["<", "5.0"] ]` — Anything greater than or equal to 4.0, but less than 5.0.
 
@@ -78,6 +85,8 @@ Relationships are specified within this basic framework. However, the exact rule
 ### `wordpress`
 
 This relationship is intended to be specified by dependents that are WordPress extensions. Because of this, the relationship itself implies a requirement, since extensions by nature require WordPress. Thus, no relationship type needs to be specified, only the version info.
+
+Since WordPress is usually fully backward compatible, only the `>=` operator should usually be used, and is the default.
 
 Examples:
 
@@ -96,11 +105,11 @@ Examples:
 }
 ```
 
-Since WordPress is usually fully backward compatible, only the `>=` operator should usually be used.
-
 ### `wordpoints`
 
 This relationship is intended to be specified by dependents that are WordPoints extensions. Because of this, the relationship itself implies a requirement, since extensions by nature require WordPoints. Thus, no relationship type needs to be specified, only the version info.
+
+Because WordPoints follows semver, only the `^` version operator should be used, and is the default.
 
 Examples:
 
@@ -119,15 +128,13 @@ Examples:
 }
 ```
 
-Because WordPoints follows semver, only the `>=` version operator may be used. The only exception is the use of the `<` operator for breaking versions. 
-
 ### `plugins`
 
 For each plugin, the following information is needed:
 
 - A slug that can be used to determine whether this plugin is installed (should correspond to the directory name of the plugin), and also to be used in regard to the update/install APIs.
 - `name` — A human-friendly identifier for the plugin, that can be shown to the user when telling them that the plugin is not installed.
-- `version` — The version info.
+- `version` — The version info. All operators are allowed, `~` is the default.
 - `url` (optional) - A URL for more info about this plugin. May be used if the plugin is not installed. Not necessary for plugins from WordPress.org.
 
 ```json
@@ -170,7 +177,7 @@ For each theme, the following information is needed:
 
 - A slug that can be used to determine whether this theme is installed (should correspond to the directory name of the theme), and also to be used in regard to the update/install APIs.
 - `name` — A human-friendly identifier for the theme, that can be shown to the user when telling them that the theme is not installed.
-- `version` — The version info.
+- `version` — The version info. All operators are allowed, `~` is the default.
 - `url` (optional) - A URL for more info about this theme. May be used if the theme is not installed. Not necessary for themes from WordPress.org.
 
 ```json
@@ -213,7 +220,7 @@ For each WordPoints extension, the following information is needed:
 
 - A slug that may be used to determine whether this extension is installed (should correspond to the directory name of the extension).
 - `name` — A human-friendly identifier for the extension, that can be shown to the user when telling them that the extension is not installed.
-- `version` — The version info.
+- `version` — The version info. Because extensions are required to follow semantic versioning, only the `^` operator should be used, and is the default.
 - `server` — The server this extension is from.
 - `ID` — The ID of this extension on the remote server.
 - `url` (optional) - A URL for more info about this extension. May be used if the extension is not installed. Not necessary for extension from WordPoints.org.
