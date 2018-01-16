@@ -62,7 +62,7 @@ Examples:
 - `4.5.2`
 - `1.2.0-alpha-3`
 
-Version specifications MAY be accompanied by any of the following operators: `<`, `<=`, `>`, `>=`, `==`, `!=`, `^`, `~`.
+Version specifications MAY be accompanied by any of the following operators: `<`, `<=`, `>`, `>=`, `!=`, `^`, `~`.
 
 The meanings of `^` and `~` are similar to their meanings within [Composer](https://getcomposer.org/doc/articles/versions.md#next-significant-release-operators):
 
