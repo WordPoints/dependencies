@@ -1,8 +1,8 @@
-# PSR-1
+# WSR-1
 
 This document outlines the specifications for how dependents declare their dependencies.
 
-This document builds on the prior information presented in [PSR-0](psr-0.md).
+This document builds on the prior information presented in [WSR-0](wsr-0.md).
 
 ## Definitions
 
