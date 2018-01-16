@@ -78,6 +78,8 @@ Examples:
 - `[ [">", "2.3.1"], ["!=", "2.3.5"] ]` — Anything greater than 2.3.1, but not 2.3.5.
 - `[ [">=", "4.0"], ["<", "5.0"] ]` — Anything greater than or equal to 4.0, but less than 5.0.
 
+> **Note on beta versions:** Beware that `[['>=', '1.3.0'], ['<', '2.0.0']]` would suggest compatibility with `2.0.0-beta-1`. However, this can be gotten around by instead specifying `['<', '2.0']` or `['<', '2.0.0-any']` instead. Better yet, use `^` instead of `>=`: `['^', '1.3.0']`.
+
 ## Relationships
 
 Relationships are specified within this basic framework. However, the exact rules are specific to each dependency library type.
