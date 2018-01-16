@@ -1,4 +1,4 @@
-# PSR-0
+# WSR-0
 
 This document outlines the scope and purpose of this project.
 
@@ -20,7 +20,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Purpose
 
-Many library developers have suggested that WordPress needs to provide a means of handling dependencies.[1](#Resources) These suggestions are being made by developers, who want to address problems that they encounter in their development workflow. These suggestions often include creating a new type of WordPress library that would act only as a dependency of other libraries.
+Many library developers have suggested that WordPress needs to provide a means of handling dependencies.<sup>[1](docs/2-background.md#resources)</sup> These suggestions are being made by developers, who want to address problems that they encounter in their development workflow. These suggestions often include creating a new type of WordPress library that would act only as a dependency of other libraries.
 
 These suggestions are usually met with opposition from the WordPress development team leaders, because the proposals are usually focused on addressing problems perceived by the developer, without due consideration for the experience of the user. These proposals might fix one developer snag, but they would introduce in the process more problems for developers and users alike.
 
