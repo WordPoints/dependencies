@@ -60,6 +60,16 @@ A user has a dependency and one or more dependents installed. We might refer to 
 #### Mitigations
 The dependent developer SHOULD take steps to mitigate this by explicitly stating the compatibility of the dependent with different versions of the depedency. However, as noted above, it is not always necessary (or even possible) for the dependent devleoper to release an update for compatibility with the dependency update. Releasing empty "compatibility" updates containing no code changes only exacerbates the problem and leads to update fatigue. At the same time, requiring the user to visit a dependent's web page to determine the compatiblity with the dependency also leads to update fatigue, because the user has to do more work for each update.
 
+Thus:
+
+### Unapplied Patches
+
+#### Problem
+Users are hesitant to update, and therefore fail to apply updates that contain security patches in a timely manner. This leaves their site open to exploitation.
+
+#### Mitigations
+The above mitigations will help here, but in addition the dependent SHOULD explicitly state that an update includes security-related changes. To reduce the possibility of security updates causing breakage, dependents SHOULD only include security-related changes in a security update.
+
 ### Summary
 
 These problems can be mitigated somewhat by following best practices. However, this only averts outright disaster, and does not actually provide a positive improvement in user experience. Combined, these issues work to create install/update fear in users—even when best practices are being followed.
