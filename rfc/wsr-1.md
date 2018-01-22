@@ -38,17 +38,6 @@ There are different ways that a dependent library can relate to a "dependency", 
 
 Additional types MAY be added.
 
-## Version Qualifiers
-
-There are different ways that a dependent library can relate to a dependency version:
-
-- `requires` - Versions that are required for the extension to work. Without them, you will experience problems, maybe even the white screen of death.
-- `recommends` - Versions that are recommended to use with the extension. The extension will work without them, but some features may be crippled, though the site won't break entirely.
-
-For example, a extension might *require* version 1.1 of a library, but *recommend* at least version 1.3.
-
-Additional qualifiers MAY be added.
-
 ## Versions
 
 Versions should be specified in a format compatible with PHP's `version_compare()` function.
@@ -87,20 +76,11 @@ This relationship is intended to be specified by dependents that are WordPress e
 
 Since WordPress is usually fully backward compatible, only the `>=` operator should usually be used, and is the default.
 
-Examples:
+Example:
 
 ```json
 {
     "wordpress": "4.9.0"
-}
-```
-
-```json
-{
-    "wordpresss": {
-        "requires": "4.9.0",
-        "recommends": "5.0.0"
-    }
 }
 ```
 
@@ -110,20 +90,11 @@ This relationship is intended to be specified by dependents that are WordPoints 
 
 Because WordPoints follows semver, only the `^` version operator should be used, and is the default.
 
-Examples:
+Example:
 
 ```json
 {
     "wordpoints": "2.4.0"
-}
-```
-
-```json
-{
-    "wordpoints": {
-        "requires": "2.4.0",
-        "recommends": "2.5.0"
-    }
 }
 ```
 
@@ -141,17 +112,6 @@ For each plugin, the following information is needed:
     "plugins": {
         "buddypress": {
             "version": "1.8.0",
-            "name": "BuddyPress"
-        }
-    }
-}
-```
-
-```json
-{
-    "plugins": {
-        "buddypress": {
-            "version": { "required": "1.8.0", "recommended": "1.9.0" },
             "name": "BuddyPress"
         }
     }
@@ -193,17 +153,6 @@ For each theme, the following information is needed:
 ```json
 {
     "themes": {
-        "responsive": {
-            "version": { "required": "1.0.0", "recommended": "1.1.0" },
-            "name": "Responsive"
-        }
-    }
-}
-```
-
-```json
-{
-    "themes": {
         "my-example-theme": {
             "version": "1.0.0",
             "name": "My Example Theme",
@@ -229,19 +178,6 @@ For each WordPoints extension, the following information is needed:
     "wordpoints-extensions": {
         "buddypress": {
             "version": "1.3.0",
-            "name": "BuddyPress",
-            "ID": "944",
-            "server": "wordpoints.org"
-        }
-    }
-}
-```
-
-```json
-{
-    "wordpoints-extensions": {
-        "buddypress": {
-            "version": { "required": "1.8.0", "recommended": "1.9.0" },
             "name": "BuddyPress",
             "ID": "944",
             "server": "wordpoints.org"
