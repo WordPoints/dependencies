@@ -31,10 +31,9 @@ Additional types MAY be added.
 
 ## Relationship Types
 
-There are different ways that a dependent library can relate to a "dependency", some of which don't actually imply *dependency* at all:
+There are different ways that a dependent library can relate to a "dependency", which don't necessarily imply *dependency* at all. At present, only one of these types is codified in this spec:
 
 - `requires` - Things that are required for the extension to work. Without them, you will experience problems, maybe even the white screen of death.
-- `integrates-with` - Things that aren't required, or necessarily needed for all sites, but which the extension will integrate with if present. 
 
 Additional types MAY be added.
 
@@ -72,8 +71,6 @@ Relationships are specified within this basic framework. However, the exact rule
 
 ### `wordpress`
 
-This relationship is intended to be specified by dependents that are WordPress extensions. Because of this, the relationship itself implies a requirement, since extensions by nature require WordPress. Thus, no relationship type needs to be specified, only the version info.
-
 Since WordPress is usually fully backward compatible, only the `>=` operator should usually be used, and is the default.
 
 Example:
@@ -85,8 +82,6 @@ Example:
 ```
 
 ### `wordpoints`
-
-This relationship is intended to be specified by dependents that are WordPoints extensions. Because of this, the relationship itself implies a requirement, since extensions by nature require WordPoints. Thus, no relationship type needs to be specified, only the version info.
 
 Because WordPoints follows semver, only the `^` version operator should be used, and is the default.
 
