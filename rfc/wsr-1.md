@@ -35,7 +35,6 @@ There are different ways that a dependent library can relate to a "dependency", 
 
 - `requires` - Things that are required for the extension to work. Without them, you will experience problems, maybe even the white screen of death.
 - `integrates-with` - Things that aren't required, or necessarily needed for all sites, but which the extension will integrate with if present. 
-- `incompatible-with` - Things with known incompatibilities. If the the extension is used along with them it will result in problems or even break the site.
 - `supersedes` - Things that have been replaced by this extension. The extension is superior and should be used instead. If the extension is used along with them it will result in problems or even break the site.
 - `superseded-by` - Things that have replaced this extension. They are superior, and should be used instead. If the extension is used along with them it will result in problems or even break the site.
 
