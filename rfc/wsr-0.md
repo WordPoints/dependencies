@@ -28,7 +28,7 @@ Considering this, this project MUST NOT set out to solve a developer problem. In
 
 ## Scope
 
-The scope of this project SHALL NOT include server-level dependencies like PHP and MySQL versions. Users don't know what those are, and also have no control over them. Depdendents SHOULD always support the same set of versions for these high-level libraries as WordPress does. The scope of the project SHALL therefore be limited to WordPress and its extensions (plugins and themes).
+The scope of this project SHALL NOT include server-level dependencies like PHP and MySQL versions. Users may not even know what those are, and may also have little control over them. Depdendents SHOULD always support the same set of versions for these high-level libraries as WordPress does. The scope of the project SHALL therefore be limited to WordPress and its extensions (plugins and themes).
 
 The focus of this project SHALL be on the dependents, and SHALL NOT make any recommendations for dependencies. The problems that the user faces cannot ultimately be solved by the dependencies alone, without cooperation from the dependents on some level. While the dependencies can make the work of the dependents easier, this is done by implementing current best practices, and does not require dependencies to follow new recommendations beyond that. In addition, dependencies are libraries in their own right, and may have no way of knowing that they have depdendents. However, the developers of dependents know, by definition, about the depdencies, and can take steps to implement these recommendations. For this reason, the problems must be solved, to some degree, in coordination with the developers of dependents.
 
