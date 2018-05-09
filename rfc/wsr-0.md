@@ -113,7 +113,7 @@ The dependent shows a message to the user when it detects a missing dependency.
 The dependent is automatically deactivated, or the dependency remains active and the user is told why, depending on the user's intention.
 
 #### Proposed Solution
-The fact that the library is a dependency should be displayed to the user, and they shouldn't have the option to deactivate it alone. They should have to deactivate both the plugin depenency and all of its dependents.
+The fact that the library is a dependency should be displayed to the user, and they shouldn't have the option to deactivate it alone. They should have to deactivate both the depenency and all of its dependents.
 
 ### Problem 3: User updates a dependency to a version not compatible with a dependent.
 
