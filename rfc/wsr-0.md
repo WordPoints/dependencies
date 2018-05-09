@@ -6,7 +6,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Definitions
 
-- **Library**: A plugin, theme, WordPoints module, or other WordPress extension.
+- **Library**: A plugin, theme, WordPoints extension, or other WordPress extension.
 - **Dependency**: A library which another library integrates with.
 - **Dependent**: A library which specifies other libraries as dependencies. 
 
