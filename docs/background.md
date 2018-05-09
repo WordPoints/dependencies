@@ -20,15 +20,15 @@ Of course, the actual comparison must be between the library and the plugin bein
 
 ## Integrations
 
-Parent-child relationships are only one type of integration though. Often two first-class plugins can integrate (call them "married"), while a child can sometimes integrate with more than one parent (only natural, we might suppose). Clear distinctions can be made between these, but in the end they are all integrations: they are all means of augmenting (and in some cases bridging) purpose-oriented packages.
+Parent-child relationships are only one type of integration though. Often, two first-class plugins can integrate (call them "married"), while a child can sometimes integrate with more than one parent (only natural, we might suppose). Clear distinctions can be made between these, but in the end they are all integrations: they are all means of augmenting (and in some cases bridging) purpose-oriented packages.
 
 ## Bearing the Burden
 
 In the end, we must acknowledge that any constraints which we want to place upon dependencies we must reasonably expect to have to apply to *most* plugins, not only a particular class built with particular intent. This is true because most plugins are extendable, that is, they can be integrated with.
 
-In response to this realization we can decide either to design a dependency system that bears this burden, leaving the plugin developer free from contraints, or to place this burden on the plugin developer, thus releiving our depenency system. In fact, in the latter case the very design of the plugin system itself, the framework provided for building plugin APIs, could potentially bear most of that burden, rather than every plugin developer having to shouler it. 
+In response to this realization we can decide either to design a dependency system that bears this burden, leaving the plugin developer free from contraints, or to place this burden on the plugin developer, thus releiving our depenency system. In fact, in the latter case the very design of the plugin system itself, the framework provided for building plugin APIs, could potentially bear most of that burden, rather than every plugin developer having to shoulder it. 
 
-The plugin API as it currently exists, can be reduced primarily to the action and filter API. This API was created to facilitate extension of and integration with WordPress itself. As such, it has also been suggested that it is capable of facilitating integration between plugins. However, it is acknowledged that this is only possible if plugin developers place upon themselves the same constraints which WordPress itself shoulders: "technical debt as a service." The knowledge that a differently designed API might make this unnecessary makes this pill all the harder to swallow.
+The plugin API as it currently exists can be reduced primarily to the action and filter API. This API was created to facilitate extension of and integration with WordPress itself. As such, it has also been suggested that it is capable of facilitating integration between plugins. However, it is acknowledged that this is only possible if plugin developers place upon themselves the same constraints which WordPress itself shoulders: "technical debt as a service." The knowledge that a differently designed API might make this unnecessary makes this pill all the harder to swallow.
 
 ## Shades of Compatibility
 
@@ -44,18 +44,17 @@ The reality, however, is that all of these problems already exist, without a dep
 
 ### Bundling
 
-One form of dependency management is to bundle all dependencies with the dependent, as part of its source code. This causes problems when multiple copies of a depdency are installed, but this can be circumvented by namespacing, at least in regard to code breakage. However, when it comes to feature breakage, even namespacing is limited in its power. There is still only one filesystem, database, cache, and ultimately only one site which will be viewed in a single window. Some interactions can be prefixed, others by their very nature cannot. Just namespacing/prefixing the code itself will not insure compatibility, unless the dependencies are very careful in their interations with these things.
+One form of dependency management is to bundle all dependencies with the dependent, as part of its source code. This causes problems when multiple copies of a depdency are installed, but this can be circumvented by namespacing, at least in regard to code breakage. However, when it comes to feature breakage, even namespacing is limited in its power. There is still only one filesystem, database, cache, and ultimately only one site which will be viewed in a single window. Some interactions can be prefixed, others by their very nature cannot. Just namespacing/prefixing the code itself will not ensure compatibility, unless the dependencies are very careful in their interactions with these things.
 
 Nonetheless, bundling is a common form of dependency management employed within the WordPress ecosystem. 
 
-But the fact that bundling is opaque, not only to users, but often to WordPress itself, also has consequences. Not only is the installation of the dependency tied to the installation of the dependent, so are updates. Because of this combination of factors, security patches are often not applied to bundled dependencies in a timely manner. This has lead to many hacked sites, and warrants the classification of bundling as a dangerous practice.
+But the fact that bundling is opaque, not only to users, but often to WordPress itself, also has consequences. Not only is the installation of the dependency tied to the installation of the dependent, but so are updates. Because of this combination of factors, security patches are often not applied to bundled dependencies in a timely manner. This has lead to many hacked sites, and warrants the classification of bundling as a dangerous practice.
 
 Bundling can work with some success for libraries, because they can be utilized for independent purposes, lessening the liklihood of conflict. However, it cannot work for extensions, because by nature they are all generally supposed to be augmenting the same feature set on the site, not separate copies of it.
 
-
 ### None/Hooks
 
-As noted above, the most common reply to the suggestion of a dependency system for WordPress, is to say that one is not really needed, if a plugin properly uses the APIs provided by WordPress already. In particular, the hooks API with its actions and filters can be used to only run code when it is triggered by the plugin that it is integrating with. (Note that this does not solve the other half of the dependency equation, which is libraries, however.)
+As noted above, the most common reply to the suggestion of a dependency system for WordPress, is to say that one is not really needed, if a plugin properly uses the APIs provided by WordPress already. In particular, the hooks API with its actions and filters can be used to run code only when it is triggered by the plugin that it is integrating with. (Note that this does not solve the other half of the dependency equation, which is libraries, however.)
 
 One of the key benefits of this approach is its granularity. It allows a dependent to degrade gracefully, from fully working with a dependency, to not working with it at all, or most anywhere in between. On the flip side of this is the fact that the degree of compatibility attained is less transparent to the user: just because their site wasn't killed doesn't mean that the features being augmented are actually going to work properly. Of course, this can be remedied in part by the dependent plugin, by displaying warning messages, but even then it may be difficult for it to tell if an integration is actaully being fully realized. Mainly, it can just give a warning when a dependency is not present at all.
 
@@ -73,11 +72,11 @@ In short, this is a two-pronged strategy, that requires great attention by the p
 
 The most commonly suggested basis for a WordPress dependency system is for plugin's to declare their dependencies, probably in the plugin header.
 
-This could also have application beside basic dependency management, like a search feature for finding extensions for a particular plugin.
+This could also have applications beside basic dependency management, like a search feature for finding extensions for a particular plugin.
 
 A downside to this approach is the potential for complexity. 
 
-There is also an argument against adding an explicit system of this sort, becuase developers will feel that the onus is no longer on them to try to ensure their plugin fails gracefully when a dependency isn't installed.
+There is also an argument against adding an explicit system of this sort, becuase developers will feel that the onus is no longer on them to try to ensure their plugin fails gracefully when a dependency isn't installed. The usefulness of this approach is therefore blunted when it is not accompanied by a dependency management framework and used in the context of a software design that specifically favors graceful (dis)integration.
 
 ## Resources
 
